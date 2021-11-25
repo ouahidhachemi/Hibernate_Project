@@ -67,6 +67,6 @@ public class Address {
 
     @Override
     public String toString() {
-        return String.format("Address{id=%d, street='%s', houseNumber='%s', zipCode=%d, city='%s'}", id, street, houseNumber, zipCode, city);
+        return String.format("Address{id=%d, street='%s', houseNumber='%s', zipCode=%d, city='%s'}", addressId, street, houseNumber, zipCode, city);
     }
 }
