@@ -2,7 +2,11 @@ package mainApplication;
 
 import entities.Address;
 import entities.Customer;
+import entities.Invoice;
 import model.CustomerDAO;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainApplication {
     public static void main(String[] args) {
@@ -17,7 +21,18 @@ public class MainApplication {
 
         Customer customer = new Customer();
         customer.setName("Hachemi");
-        customer.setAddress(address);
+
+        Invoice invoice1 = new Invoice();
+        Invoice invoice2 = new Invoice();
+        Invoice invoice3 = new Invoice();
+
+        List<Invoice> invoices = new ArrayList<>();
+
+        invoices.add(invoice1);
+        invoices.add(invoice2);
+        invoices.add(invoice3);
+
+        customer.setInvoices(invoices);
 
         customerDAO.saveCustomer(customer);
 

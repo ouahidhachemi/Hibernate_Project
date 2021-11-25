@@ -52,14 +52,17 @@ public class Customer {
         this.address = address;
     }
 
+    public List<Invoice> getInvoices() {
+        return invoices;
+    }
 
+    public void setInvoices(List<Invoice> invoices) {
+        this.invoices = invoices;
+    }
 
     @Override
     public String toString() {
-        return "Customer{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", address=" + address +
-                '}';
+        return String.format("Customer{id=%d, name='%s', address=%s, invoices=%s}", id, name, address, invoices);
     }
+
 }
