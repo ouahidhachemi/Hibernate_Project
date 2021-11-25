@@ -6,9 +6,9 @@ import javax.persistence.*;
 @Table(name = "ADRESSE")
 public class Address {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "address_id", nullable = false)
-    private long addressId;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "ID_ADRESSE", nullable = false)
+    private Long addressId;
 
     @Column(name = "RUE")
     private String street;
@@ -23,6 +23,13 @@ public class Address {
     private String city;
 
     public Address() {
+    }
+
+    public Address(String street, String houseNumber, int zipCode, String city) {
+        this.street = street;
+        this.houseNumber = houseNumber;
+        this.zipCode = zipCode;
+        this.city = city;
     }
 
     public Long getAddressId() {

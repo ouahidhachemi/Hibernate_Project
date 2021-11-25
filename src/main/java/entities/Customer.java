@@ -8,7 +8,7 @@ import java.util.List;
 public class Customer {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "ID_CLIENT", nullable = false)
     private Long id;
 
@@ -16,6 +16,7 @@ public class Customer {
     private String name;
 
     @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "ADRESSE")
     private Address address;
 
     @OneToMany(cascade = CascadeType.ALL)
@@ -62,7 +63,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        return String.format("Customer{id=%d, name='%s', address=%s, invoices=%s}", id, name, address, invoices);
+        return String.format("%n%nCustomer{id=%d, name='%s',%naddress=%s, %n%ninvoices=%s}", id, name, address, invoices);
     }
 
 }
