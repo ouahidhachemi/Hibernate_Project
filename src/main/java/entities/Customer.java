@@ -1,6 +1,7 @@
 package entities;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "CLIENT")
@@ -14,8 +15,12 @@ public class Customer {
     @Column(name = "CLIENT_NAME")
     private String name;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Address address;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "CUSTOMER_INVOICES")
+    private List<Invoice> invoices;
 
     public Customer() {}
 
@@ -37,5 +42,24 @@ public class Customer {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address=" + address +
+                '}';
     }
 }
