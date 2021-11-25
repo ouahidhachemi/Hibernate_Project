@@ -9,17 +9,17 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "CLIENT_ID", nullable = false)
-    private long id;
+    @Column(name = "ID_CLIENT", nullable = false)
+    private Long id;
 
-    @Column(name = "CLIENT_NAME")
+    @Column(name = "NOM_CLIENT")
     private String name;
 
     @OneToOne(cascade = CascadeType.ALL)
     private Address address;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "CUSTOMER_INVOICES")
+    @JoinTable(name = "FACTURE_CLIENT")
     private List<Invoice> invoices;
 
     public Customer() {}
@@ -28,11 +28,11 @@ public class Customer {
         this.name = name;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

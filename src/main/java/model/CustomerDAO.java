@@ -16,7 +16,7 @@ public class CustomerDAO {
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
 
-        if (customer.getId() == 0) {
+        if (customer.getId() == null) {
             em.persist(customer);
         } else {
             em.merge(customer);

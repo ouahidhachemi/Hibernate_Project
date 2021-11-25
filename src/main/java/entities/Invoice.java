@@ -8,7 +8,7 @@ public class Invoice {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "INVOICE_ID", nullable = false)
-    private long id;
+    private Long id;
 
     public Invoice() {
     }

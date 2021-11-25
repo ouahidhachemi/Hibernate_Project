@@ -1,18 +1,32 @@
 package entities;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "PRODUCT")
 public class Product {
 
-    private long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID_PRODUIT", nullable = false)
+    private Long id;
+
+    @Column(name = "NOM_PRODUIT")
     private String name;
+
+    @Column(name = "PRIX_PRODUIT")
     private float unitPrice;
 
-    protected Product(long id, String name, float unitPrice) {}
+    public Product(String name, float unitPrice) {
+        this.name = name;
+        this.unitPrice = unitPrice;
+    }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

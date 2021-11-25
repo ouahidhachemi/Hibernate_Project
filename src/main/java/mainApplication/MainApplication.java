@@ -3,7 +3,9 @@ package mainApplication;
 import entities.Address;
 import entities.Customer;
 import entities.Invoice;
+import entities.Product;
 import model.CustomerDAO;
+import model.ProductDAO;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +13,17 @@ import java.util.List;
 public class MainApplication {
     public static void main(String[] args) {
         CustomerDAO customerDAO = new CustomerDAO();
+
+        ProductDAO productDAO = new ProductDAO();
+
+        Product product1 = new Product("POMME", 25.0f);
+        productDAO.saveProduct(product1);
+
+        Product product2 = new Product("Orange", 22.0f);
+        productDAO.saveProduct(product2);
+
+        Product product3 = new Product("Banane", 36.0f);
+        productDAO.saveProduct(product3);
 
         Address address = new Address();
 
