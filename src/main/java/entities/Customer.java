@@ -14,6 +14,9 @@ public class Customer {
     @Column(name = "CLIENT_NAME")
     private String name;
 
+    @OneToOne
+    private Address address;
+
     public Customer() {}
 
     public Customer(String name) {
