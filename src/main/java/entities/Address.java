@@ -6,8 +6,8 @@ import javax.persistence.*;
 @Table(name = "ADRESSE")
 public class Address {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "ID_ADRESSE", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID_ADRESSE", updatable = false, nullable = false)
     private Long addressId;
 
     @Column(name = "RUE")

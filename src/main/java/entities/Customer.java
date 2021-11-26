@@ -8,8 +8,8 @@ import java.util.List;
 public class Customer {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "ID_CLIENT", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID_CLIENT", updatable = false, nullable = false)
     private Long id;
 
     @Column(name = "NOM_CLIENT")

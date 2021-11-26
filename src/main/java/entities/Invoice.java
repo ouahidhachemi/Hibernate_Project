@@ -9,8 +9,8 @@ import java.util.Map;
 public class Invoice {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "ID_FACTURE", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID_FACTURE", updatable = false, nullable = false)
     private Long id;
 
     @Column(name = "DATE_FACTURE")

@@ -27,11 +27,20 @@ public class MainApplication {
         Product product3 = new Product("Banane", 36.0f);
         productDAO.saveProduct(product3);
 
-        Address address = new Address("Cité des enseignants", "Bt 3 N° 6", 31017, "Gdyel");
+        Address address1 = new Address("Cité des enseignants", "Bt 3 N° 6", 31017, "Gdyel");
+        Address address2 = new Address("Cité des enseignants", "Bt 3 N° 6", 31017, "Gdyel");
+        Address address3 = new Address("Cité des enseignants", "Bt 3 N° 6", 31017, "Gdyel");
+        Address address4 = new Address("Cité des enseignants", "Bt 3 N° 6", 31017, "Gdyel");
 
-        Customer customer = new Customer("Hachemi");
+        Customer customer1 = new Customer("Kawther Hachemi");
+        Customer customer2 = new Customer("Omar Youcef Hachemi");
+        Customer customer3 = new Customer("Ikhlas Hachemi");
+        Customer customer4 = new Customer("Younes Adem Hachemi");
 
-        customer.setAddress(address);
+        customer1.setAddress(address1);
+        customer2.setAddress(address2);
+        customer3.setAddress(address3);
+        customer4.setAddress(address4);
 
         Map<Product, Integer> productList1 = new HashMap<>();
         Map<Product, Integer> productList2 = new HashMap<>();
@@ -63,14 +72,22 @@ public class MainApplication {
         invoices.add(invoice2);
         invoices.add(invoice3);
 
-        customer.setInvoices(invoices);
+        customer1.setInvoices(invoices);
 
-        customerDAO.saveCustomer(customer);
-/*
-        System.out.println("Client : " + customerDAO.showCustomer(1L).getId());
-        System.out.println("Client : " + customerDAO.showCustomer(1L).getName());
-        System.out.println("Client : " + customerDAO.showCustomer(1L).getAddress());
-        System.out.println("Client : " + customerDAO.showCustomer(1L).getInvoices());
-*/
+        customerDAO.saveCustomer(customer1);
+        customerDAO.saveCustomer(customer2);
+        customerDAO.saveCustomer(customer3);
+        customerDAO.saveCustomer(customer4);
+
+        customerDAO.showCustomer();
+
+        //System.out.println("Client : " + customerDAO.showCustomer(1L).getId());
+        //Customer client = customerDAO.findCustomer(1L);
+        //System.out.println("# " + customerDAO.findCustomer(1L));
+
+        //System.out.println(client.getId());
+        //System.out.println("Client : " + customerDAO.showCustomer(1L).getAddress());
+        //System.out.println("Client : " + customerDAO.showCustomer(1L).getInvoices());
+
     }
 }

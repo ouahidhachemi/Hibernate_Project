@@ -7,8 +7,8 @@ import javax.persistence.*;
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "ID_PRODUIT", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID_PRODUIT", updatable = false, nullable = false)
     private Long id;
 
     @Column(name = "NOM_PRODUIT")
