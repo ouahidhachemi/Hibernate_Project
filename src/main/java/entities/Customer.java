@@ -15,8 +15,8 @@ public class Customer {
     @Column(name = "NOM_CLIENT")
     private String name;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "ADRESSE")
+
+    @Embedded
     private Address address;
 
     @OneToMany(cascade = CascadeType.ALL)

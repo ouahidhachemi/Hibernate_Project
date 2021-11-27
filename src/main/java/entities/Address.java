@@ -2,13 +2,11 @@ package entities;
 
 import javax.persistence.*;
 
-@Entity
+import static java.lang.String.format;
+
+@Embeddable
 @Table(name = "ADRESSE")
 public class Address {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_ADRESSE", updatable = false, nullable = false)
-    private Long addressId;
 
     @Column(name = "RUE")
     private String street;
@@ -30,14 +28,6 @@ public class Address {
         this.houseNumber = houseNumber;
         this.zipCode = zipCode;
         this.city = city;
-    }
-
-    public Long getAddressId() {
-        return addressId;
-    }
-
-    public void setAddressId(Long addressId) {
-        this.addressId = addressId;
     }
 
     public String getStreet() {
@@ -74,6 +64,6 @@ public class Address {
 
     @Override
     public String toString() {
-        return String.format("Address{id=%d, street='%s', houseNumber='%s', zipCode=%d, city='%s'}", addressId, street, houseNumber, zipCode, city);
+        return format("Address{street='%s', houseNumber='%s', zipCode=%d, city='%s'}", street, houseNumber, zipCode, city);
     }
 }

@@ -38,9 +38,9 @@ public class MainApplication {
         Customer customer4 = new Customer("Younes Adem Hachemi");
 
         customer1.setAddress(address1);
-        customer2.setAddress(address2);
-        customer3.setAddress(address3);
-        customer4.setAddress(address4);
+        customer2.setAddress(address1);
+        customer3.setAddress(address1);
+        customer4.setAddress(address1);
 
         Map<Product, Integer> productList1 = new HashMap<>();
         Map<Product, Integer> productList2 = new HashMap<>();
