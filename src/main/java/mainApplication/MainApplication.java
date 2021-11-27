@@ -78,13 +78,5 @@ public class MainApplication {
 
         customerDAO.showCustomer();
 
-        //System.out.println("Client : " + customerDAO.showCustomer(1L).getId());
-        //Customer client = customerDAO.findCustomer(1L);
-        //System.out.println("# " + customerDAO.findCustomer(1L));
-
-        //System.out.println(client.getId());
-        //System.out.println("Client : " + customerDAO.showCustomer(1L).getAddress());
-        //System.out.println("Client : " + customerDAO.showCustomer(1L).getInvoices());
-
     }
 }
