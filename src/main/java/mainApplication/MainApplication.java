@@ -27,20 +27,17 @@ public class MainApplication {
         Product product3 = new Product("Banane", 36.0f);
         productDAO.saveProduct(product3);
 
-        Address address1 = new Address("Cité des enseignants", "Bt 3 N° 6", 31017, "Gdyel");
-        Address address2 = new Address("Cité des enseignants", "Bt 3 N° 6", 31017, "Gdyel");
-        Address address3 = new Address("Cité des enseignants", "Bt 3 N° 6", 31017, "Gdyel");
-        Address address4 = new Address("Cité des enseignants", "Bt 3 N° 6", 31017, "Gdyel");
+        Address address = new Address("Cité des informaticiens", "Bt 3 N° 6", 31000, "Oran");
 
         Customer customer1 = new Customer("Kawther Hachemi");
         Customer customer2 = new Customer("Omar Youcef Hachemi");
         Customer customer3 = new Customer("Ikhlas Hachemi");
         Customer customer4 = new Customer("Younes Adem Hachemi");
 
-        customer1.setAddress(address1);
-        customer2.setAddress(address1);
-        customer3.setAddress(address1);
-        customer4.setAddress(address1);
+        customer1.setAddress(address);
+        customer2.setAddress(address);
+        customer3.setAddress(address);
+        customer4.setAddress(address);
 
         Map<Product, Integer> productList1 = new HashMap<>();
         Map<Product, Integer> productList2 = new HashMap<>();
